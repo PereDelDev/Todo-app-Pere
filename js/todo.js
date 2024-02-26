@@ -4,10 +4,26 @@ const formNombre = document.querySelector('#soloNombre')
 const seccion = document.querySelector('.secciontareas')
 let id = tareas.length
 function pintarTareas(lista, domElement) {
+    domElement.innerHTML = ''
     lista.forEach(objeto => pintarTarea(objeto, domElement))
 }
 
 formNombrePrioridad.addEventListener('submit', getData)
+formPrioridad.addEventListener('change', filtrarTareas)
+
+function filtroTareas(list, valor) {
+    return list.filter(item => {
+        let prioridad = item.prioridad
+        let miprioridad = valor
+        return prioridad.includes(miprioridad)
+    })
+}
+
+function filtrarTareas(event) {
+
+    const listaFiltrada = filtroTareas(tareas, event.target.value)
+    pintarTareas(listaFiltrada, seccion)
+}
 
 function getData(event) {
     event.preventDefault()
@@ -28,7 +44,6 @@ function borrarTarea(event) {
     padre = event.target.parentNode.parentNode
     hijo = event.target.parentNode
     padre.removeChild(hijo)
-    console.log(tareas)
 }
 function pintarTarea(objeto, domElement) {
     const article = document.createElement('article')
