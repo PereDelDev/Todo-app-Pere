@@ -10,6 +10,23 @@ function pintarTareas(lista, domElement) {
 
 formNombrePrioridad.addEventListener('submit', getData)
 formPrioridad.addEventListener('change', filtrarTareas)
+formNombre.addEventListener('keyup', filtrarNombres)
+
+//tienes que mirar lo del filtro que se filtra a medida que escribe
+function filtrarNombres(event) {
+    event.preventDefault()
+    let valor = event.target.value
+    const listaFiltrada = filtroNombres(tareas, valor)
+    pintarTareas(listaFiltrada, seccion)
+
+}
+function filtroNombres(list, valor) {
+    return list.filter(item => {
+        let nombre = item.titulo.toLowerCase()
+        let miNombre = valor.toLowerCase()
+        return nombre.includes(miNombre)
+    })
+}
 
 function filtroTareas(list, valor) {
     return list.filter(item => {
@@ -30,8 +47,6 @@ function getData(event) {
     let tarea = event.target.nombre.value
     let prioridad = event.target.prioridad.value
     const nuevaTarea = { id: id, titulo: tarea, prioridad: prioridad }
-
-    console.log(nuevaTarea)
     guardarData(tareas, nuevaTarea)
 
 
@@ -62,7 +77,7 @@ function guardarData(list, objeto) {
     let resultado = list.findIndex(item => item.titulo === objeto.titulo)
     if (resultado === -1) {
         list.push(objeto)
-        pintarTarea(objeto, seccion)
+        pintarTareas(list, seccion)
         id++
     } else {
         alert('La Tarea ya existe')
