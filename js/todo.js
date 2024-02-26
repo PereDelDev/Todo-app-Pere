@@ -12,7 +12,6 @@ formNombrePrioridad.addEventListener('submit', getData)
 formPrioridad.addEventListener('change', filtrarTareas)
 formNombre.addEventListener('keyup', filtrarNombres)
 
-//tienes que mirar lo del filtro que se filtra a medida que escribe
 function filtrarNombres(event) {
     event.preventDefault()
     let valor = event.target.value
@@ -53,12 +52,23 @@ function getData(event) {
 }
 
 function borrarTarea(event) {
+
     let id = Number(event.target.dataset.id);
     let posicion = tareas.findIndex(tarea => tarea.id === id)
     tareas.splice(posicion, 1)
     padre = event.target.parentNode.parentNode
+
     hijo = event.target.parentNode
-    padre.removeChild(hijo)
+    hijo.style.opacity = 0
+    setTimeout(() => {
+
+
+
+        padre.removeChild(hijo)
+
+
+    }, 1000);
+
 }
 function pintarTarea(objeto, domElement) {
     const article = document.createElement('article')
@@ -74,7 +84,7 @@ function pintarTarea(objeto, domElement) {
 }
 
 function guardarData(list, objeto) {
-    let resultado = list.findIndex(item => item.titulo === objeto.titulo)
+    let resultado = list.findIndex(item => item.titulo.toLowerCase() === objeto.titulo.toLowerCase())
     if (resultado === -1) {
         list.push(objeto)
         pintarTareas(list, seccion)
