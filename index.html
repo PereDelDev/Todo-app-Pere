@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOS'S APP</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/data.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>TODO'S APP</h1>
+            <form id="formNombrePrioridad">
+                <input type="text" name="nombre">
+                <select name="prioridad">
+                    <option value=""></option>
+                    <option value="">Urgente</option>
+                    <option value="">Mensual</option>
+                    <option value="">Diaria</option>
+                </select>
+                <input type="submit" value="Enviar">
+            </form>
+            <hr>
+            <select id="soloPrioridad">
+                <option value=""></option>
+                <option value="">Urgente</option>
+                <option value="">Mensual</option>
+                <option value="">Diaria</option>
+            </select>
+            <hr>
+            <form id="soloNombre">
+                <input type="text" name="soloNombre">
+            </form>
+        </header>
+
+        <main>
+
+            <section class="secciontareas"></section>
+            <!--  <article>
+                <h2>Nombre de la Tarea</h2>
+                <button>Eliminar</button>
+            </article> -->
+
+
+        </main>
+
+
+    </div>
+
+
+    <script src="./js/todo.js"></script>
+</body>
+
+</html>

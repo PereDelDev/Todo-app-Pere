@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 100px;
+    flex-wrap: wrap;
+}
+
+header {
+    width: 100%;
+
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+}
+
+.urgente {
+    background-color: red;
+}
+
+.mensual {
+    background-color: azul;
+}
+
+.diaria {
+    background-color: green;
+}
+
+main {
+    width: 100%;
+}
+
+article {
+    display: flex;
+    border: 2px solid red;
+    padding: 10px;
+
+    & h2 {
+        width: 100%;
+
+    }
+}
