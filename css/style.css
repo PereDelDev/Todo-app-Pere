@@ -32,7 +32,7 @@ h1 {
 }
 
 .mensual {
-    background-color: azul;
+    background-color: blue;
 }
 
 .diaria {
@@ -45,7 +45,6 @@ main {
 
 article {
     display: flex;
-    border: 2px solid red;
     padding: 10px;
 
     & h2 {
