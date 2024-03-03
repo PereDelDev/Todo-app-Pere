@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 body {
-    background-color: grey;
+    background-color: #1d1A39;
 
 }
 
@@ -21,48 +25,63 @@ body {
     border-radius: 30px;
     border: 2px solid black;
     box-shadow: 2px 2px 10px;
+    /* background-color: #451952; */
+    background-color: #4a1b35;
 
 }
 
 header {
     width: 100%;
+    background-color: #652a4a;
+    border: 2px solid black;
+    margin: 1em 0 2em 0;
+    border-radius: 30px;
+    box-shadow: 2px 2px 10px black;
 
 }
 
 h1 {
     text-align: center;
     width: 100%;
+    font-size: 50px;
+    color: white;
+    margin: 0.2em 0;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 .urgente {
-    border-left: 6px solid red;
-    background-color: lightcoral;
+    border-left: 6px solid #b12a45;
+    background-color: #ae445a;
 
     &:hover {
-        border-left: 15px solid red;
+        border-left: 15px solid #b12a45;
     }
 }
 
 .mensual {
-    border-left: 6px solid blue;
-    background-color: lightblue;
+    border-left: 6px solid #f18934;
+    background-color: #f39F5A;
 
     &:hover {
-        border-left: 15px solid blue
+        border-left: 15px solid #f18934
     }
 }
 
 .diaria {
-    background-color: lightgreen;
-    border-left: 6px solid green;
+    background-color: #e8BCB9;
+    border-left: 6px solid #e59893;
 
     &:hover {
-        border-left: 15px solid green;
+        border-left: 15px solid #e59893;
     }
 }
 
 main {
     width: 100%;
+
 
 }
 
@@ -77,24 +96,62 @@ article {
     }
 }
 
-article:hover {}
 
 .secciontareas {
     border: 2px solid black;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 2px 2px 10px;
+    box-shadow: 2px 2px 10px black;
     transition: 1s;
+    color: white;
 }
 
 #formNombrePrioridad {
     padding: 10px;
     display: flex;
     justify-content: space-around;
+
+    & select {
+        background-color: #4a1b35;
+        border: none;
+        border-radius: 15px;
+        padding: 10px;
+        color: white;
+    }
 }
 
 .formDown {
     padding: 10px;
+    margin: 10px 0;
     display: flex;
     justify-content: space-around;
+
+    & select {
+        background-color: #4a1b35;
+        border: none;
+        border-radius: 15px;
+        padding: 10px;
+        color: white;
+    }
+}
+
+input {
+    background-color: #4a1b35;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 15px;
+}
+
+button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    margin-right: 0.5em;
+    transition: 0.7s;
+
+    &:hover {
+        transform: rotateZ(180deg);
+    }
 }

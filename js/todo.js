@@ -83,7 +83,7 @@ function pintarTarea(objeto, domElement) {
     const h2 = document.createElement('h2')
     h2.textContent = objeto.titulo
     button.dataset.id = id
-    button.textContent = 'Eliminar'
+    button.textContent = 'X'
     button.addEventListener('click', borrarTarea)
     article.classList.add(objeto.prioridad)
     article.append(h2, button)
