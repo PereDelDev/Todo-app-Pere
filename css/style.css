@@ -6,6 +6,7 @@
 
 body {
     background-color: grey;
+
 }
 
 .wrapper {
@@ -34,19 +35,35 @@ h1 {
 }
 
 .urgente {
-    background-color: red;
+    border-left: 6px solid red;
+    background-color: lightcoral;
+
+    &:hover {
+        border-left: 15px solid red;
+    }
 }
 
 .mensual {
-    background-color: blue;
+    border-left: 6px solid blue;
+    background-color: lightblue;
+
+    &:hover {
+        border-left: 15px solid blue
+    }
 }
 
 .diaria {
-    background-color: green;
+    background-color: lightgreen;
+    border-left: 6px solid green;
+
+    &:hover {
+        border-left: 15px solid green;
+    }
 }
 
 main {
     width: 100%;
+
 }
 
 article {
@@ -59,6 +76,8 @@ article {
 
     }
 }
+
+article:hover {}
 
 .secciontareas {
     border: 2px solid black;

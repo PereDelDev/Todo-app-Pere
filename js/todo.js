@@ -45,9 +45,16 @@ function getData(event) {
     event.preventDefault()
     let tarea = event.target.nombre.value
     let prioridad = event.target.prioridad.value
-    const nuevaTarea = { id: id, titulo: tarea, prioridad: prioridad }
-    guardarData(tareas, nuevaTarea)
-
+    if (tarea !== '' && prioridad !== '') {
+        const nuevaTarea = { id: id, titulo: tarea, prioridad: prioridad }
+        guardarData(tareas, nuevaTarea)
+    } else if (tarea === '' && prioridad !== '') {
+        alert('Introduce una Tarea')
+    } else if (tarea !== '' && prioridad === '') {
+        alert('Introduce la Prioridad')
+    } else if (tarea === '' && prioridad === '') {
+        alert('Los campos no pueden estar vacios')
+    }
 
 }
 
