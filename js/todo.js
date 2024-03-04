@@ -9,6 +9,7 @@ function pintarTareas(lista, domElement) {
 }
 const tickverde = document.querySelector('.tickverde')
 const tickrojo = document.querySelector('.tickrojo')
+const wrapper = document.querySelector('.wrapper')
 
 formNombrePrioridad.addEventListener('submit', getData)
 formPrioridad.addEventListener('change', filtrarTareas)
@@ -44,8 +45,10 @@ function filtrarTareas(event) {
 }
 function correcto() {
     tickverde.style.opacity = '1'
+    wrapper.style.cssText = 'box-shadow: 2px 2px 20px green;';
     setTimeout(() => {
         tickverde.style.opacity = '0'
+        wrapper.style.cssText = 'box-shadow: 2px 2px 10px black;';
     }, 1500)
 }
 
@@ -69,9 +72,11 @@ function getData(event) {
 }
 function borrarTick() {
     tickrojo.style.opacity = '1'
+    wrapper.style.cssText = 'box-shadow: 2px 2px 20px red;';
     setTimeout(() => {
         tickrojo.style.opacity = '0'
-    }, 1500)
+        wrapper.style.cssText = 'box-shadow: 2px 2px 10px black;';
+    }, 1000)
 }
 function borrarTarea(event) {
     let id = Number(event.target.dataset.id);
