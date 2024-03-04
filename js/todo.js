@@ -7,6 +7,8 @@ function pintarTareas(lista, domElement) {
     domElement.innerHTML = ''
     lista.forEach(objeto => pintarTarea(objeto, domElement))
 }
+const tickverde = document.querySelector('.tickverde')
+const tickrojo = document.querySelector('.tickrojo')
 
 formNombrePrioridad.addEventListener('submit', getData)
 formPrioridad.addEventListener('change', filtrarTareas)
@@ -40,6 +42,12 @@ function filtrarTareas(event) {
     const listaFiltrada = filtroTareas(tareas, event.target.value)
     pintarTareas(listaFiltrada, seccion)
 }
+function correcto() {
+    tickverde.style.opacity = '1'
+    setTimeout(() => {
+        tickverde.style.opacity = '0'
+    }, 1500)
+}
 
 function getData(event) {
     event.preventDefault()
@@ -57,15 +65,21 @@ function getData(event) {
         alert('Los campos no pueden estar vacios')
     }
 
-}
 
+}
+function borrarTick() {
+    tickrojo.style.opacity = '1'
+    setTimeout(() => {
+        tickrojo.style.opacity = '0'
+    }, 1500)
+}
 function borrarTarea(event) {
     let id = Number(event.target.dataset.id);
     console.log(id)
     let posicion = tareas.findIndex(tarea => tarea.idTarea === id)
     tareas.splice(posicion, 1)
     padre = event.target.parentNode.parentNode
-
+    borrarTick()
     hijo = event.target.parentNode
     hijo.style.opacity = 0
     setTimeout(() => {
@@ -98,6 +112,7 @@ function guardarData(list, objeto) {
         list.push(objeto)
         pintarTareas(list, seccion)
         id++
+        correcto()
     } else {
         alert('La Tarea ya existe')
     }

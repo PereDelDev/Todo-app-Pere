@@ -7,6 +7,71 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.tickverde {
+    margin: -70px 0;
+    position: relative;
+    top: 90px;
+    width: 70px;
+    height: 70px;
+    border: 4px solid green;
+    border-radius: 50%;
+    left: 600px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.tick2 {
+    position: absolute;
+    width: 25px;
+    border-top: 4px solid green;
+    top: 35px;
+    left: 8px;
+
+    transform: rotatez(45deg);
+}
+
+.tick3 {
+    position: absolute;
+    width: 35px;
+    border-top: 4px solid green;
+    top: 30px;
+    left: 21px;
+
+    transform: rotatez(-50deg);
+}
+
+.tickrojo {
+    margin: -70px 0;
+    position: relative;
+    top: 90px;
+    width: 70px;
+    height: 70px;
+    border: 4px solid red;
+    border-radius: 50%;
+    left: 530px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.tickrojo2 {
+    position: absolute;
+    width: 40px;
+    border-top: 4px solid red;
+    top: 30px;
+    left: 10px;
+
+    transform: rotatez(45deg);
+}
+
+.tickrojo3 {
+    position: absolute;
+    width: 40px;
+    border-top: 4px solid red;
+    top: 30px;
+    left: 10px;
+
+    transform: rotatez(-45deg);
+}
 
 body {
     background-color: #1d1A39;
