@@ -92,12 +92,12 @@ function borrarTarea(event) {
 
 
         padre.removeChild(hijo)
-
+        if (tareas.length === 0) {
+            seccion.innerHTML = `<h3> NO HAY TAREAS</h3>`
+        }
 
     }, 1000);
-    if (tareas.length === 0) {
-        seccion.innerHTML = `<h3> NO HAY TAREAS</h3>`
-    }
+
 
 }
 function pintarTarea(objeto, domElement) {
