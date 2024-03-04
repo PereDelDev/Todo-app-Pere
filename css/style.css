@@ -134,6 +134,10 @@ h1 {
     }
 }
 
+h3 {
+    padding: 10px;
+}
+
 .diaria {
     background-color: #e8BCB9;
     border-left: 6px solid #e59893;
