@@ -46,7 +46,8 @@ function getData(event) {
     let tarea = event.target.nombre.value
     let prioridad = event.target.prioridad.value
     if (tarea !== '' && prioridad !== '') {
-        const nuevaTarea = { id: id, titulo: tarea, prioridad: prioridad }
+
+        const nuevaTarea = { idTarea: id, titulo: tarea, prioridad: prioridad }
         guardarData(tareas, nuevaTarea)
     } else if (tarea === '' && prioridad !== '') {
         alert('Introduce una Tarea')
@@ -59,9 +60,9 @@ function getData(event) {
 }
 
 function borrarTarea(event) {
-
     let id = Number(event.target.dataset.id);
-    let posicion = tareas.findIndex(tarea => tarea.id === id)
+    console.log(id)
+    let posicion = tareas.findIndex(tarea => tarea.idTarea === id)
     tareas.splice(posicion, 1)
     padre = event.target.parentNode.parentNode
 
@@ -82,7 +83,8 @@ function pintarTarea(objeto, domElement) {
     const button = document.createElement('button')
     const h2 = document.createElement('h2')
     h2.textContent = objeto.titulo
-    button.dataset.id = id
+    console.log(objeto.idTarea)
+    button.dataset.id = objeto.idTarea
     button.textContent = 'X'
     button.addEventListener('click', borrarTarea)
     article.classList.add(objeto.prioridad)
